@@ -1,0 +1,8 @@
+{
+  "name": "PP-Tp1",
+  "app_id": "1fa44015",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
