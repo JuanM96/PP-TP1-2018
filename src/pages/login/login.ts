@@ -22,7 +22,7 @@ export class LoginPage {
     this.nav.push(RegistroPage);
   }
  
-  public login() {
+  /*public login() {
     this.aux = true;
     
     this.showLoading()
@@ -39,7 +39,7 @@ export class LoginPage {
       });
       
 
-  }
+  }*/
   public login2() {
     this.aux = true
     this.showLoading();
@@ -47,6 +47,13 @@ export class LoginPage {
       .then(
         () => this.nav.setRoot(TabsPage),
         error => this.showError(error.message)//console.log(error.message)
+      );
+  }
+  loginWithGoogle() {
+    this.auth.signInWithGoogle()
+      .then(
+        () => this.nav.setRoot(TabsPage),
+        error => console.log(error.message)
       );
   }
   showLoading() {
