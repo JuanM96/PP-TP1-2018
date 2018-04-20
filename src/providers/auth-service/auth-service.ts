@@ -1,8 +1,12 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
- 
-export class User {
+
+import { AngularFireAuth } from 'angularfire2/auth';
+import * as firebase from 'firebase/app';
+import AuthProvider = firebase.auth.AuthProvider;
+
+export class Usuario {
   name: string;
   email: string;
  
@@ -14,17 +18,30 @@ export class User {
  
 @Injectable()
 export class AuthService {
-  currentUser: User;
- 
+  currentUser: Usuario;
+
+  private user: firebase.User;
+  constructor(public afAuth: AngularFireAuth) {
+		afAuth.authState.subscribe(user => {
+			this.user = user;
+		});
+  }
+
+  public signInWithEmail(credentials) {
+		console.log('Sign in with email');
+		return this.afAuth.auth.signInWithEmailAndPassword(credentials.email,
+			 credentials.password);
+	}
+  
   public login(credentials) {
     if (credentials.email === null || credentials.password === null) {
       return Observable.throw("Porvavor No dejes campos vacios");
     } else {
       return Observable.create(observer => {
         // At this point make a request to your backend to make a real check!
-        //let access = (credentials.password === "admin" && credentials.email === "admin");
-        let access = (credentials.password.toLowerCase() === "admin" && credentials.email.toLowerCase() === "admin");
-        this.currentUser = new User('admin', 'admin@admin.com');
+        let access = (this.signInWithEmail(credentials));
+        //let access = (credentials.password.toLowerCase() === "admin" && credentials.email.toLowerCase() === "admin");
+        //this.currentUser = new Usuario('admin', 'admin@admin.com');
         observer.next(access);
         observer.complete();
       });
@@ -43,7 +60,7 @@ export class AuthService {
     }
   }
  
-  public getUserInfo() : User {
+  public getUserInfo() : Usuario {
     return this.currentUser;
   }
  

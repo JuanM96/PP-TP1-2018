@@ -15,18 +15,18 @@ import { RegistroPage } from '../pages/registro/registro';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthService } from '../providers/auth-service/auth-service';
-//------------
-/*import { AngularFireModule } from 'angularfire2';
+//------------ FireBase
+import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AngularFireAuthModule } from 'angularfire2/auth';
-export  var firebaseConf = {
-  apiKey: "AIzaSyCb7bPKZ2BCpB7msTQLc-P7dCJqVnLezGE",
-  authDomain: "cargadecredito-d0255.firebaseapp.com",
-  databaseURL: "https://cargadecredito-d0255.firebaseio.com",
-  projectId: "cargadecredito-d0255",
-  storageBucket: "cargadecredito-d0255.appspot.com",
-  messagingSenderId: "954056638828"
-};*/
+import { AngularFireAuth } from 'angularfire2/auth';
+export const firebaseConfig = {
+    apiKey: "AIzaSyAe_Ni8qNd-a6qPUbgKKYKJBBZWRKaTAlM",
+    authDomain: "pp-2018-8b015.firebaseapp.com",
+    databaseURL: "https://pp-2018-8b015.firebaseio.com",
+    projectId: "pp-2018-8b015",
+    storageBucket: "pp-2018-8b015.appspot.com",
+    messagingSenderId: "691170251529"
+};
 //-----------
 @NgModule({
   declarations: [
@@ -41,9 +41,8 @@ export  var firebaseConf = {
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    /*AngularFireModule.initializeApp(firebaseConf), // imports firebase/app needed for everything
-    AngularFireDatabaseModule, // imports firebase/database, only needed for database features
-    AngularFireAuthModule // imports firebase/auth, only needed for auth features*/
+    AngularFireModule.initializeApp(firebaseConfig,'pp-2018'),
+    AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -59,7 +58,8 @@ export  var firebaseConf = {
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthService
+    AuthService,
+    AngularFireAuth
   ]
 })
 export class AppModule {}
