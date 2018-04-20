@@ -32,6 +32,12 @@ export class RegistroPage {
         this.showPopup("Error", error);
       });
   }
+  public signup() {
+		this.auth.signUp(this.registerCredentials).then(
+			() =>this.showPopup("Success", "Account created."),
+			error => this.showPopup("Error",error.message)
+		);
+}
  
   showPopup(title, text) {
     let alert = this.alertCtrl.create({

@@ -22,7 +22,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 export const firebaseConfig = {
     apiKey: "AIzaSyAe_Ni8qNd-a6qPUbgKKYKJBBZWRKaTAlM",
     authDomain: "pp-2018-8b015.firebaseapp.com",
-    databaseURL: "https://pp-2018-8b015.firebaseio.com",
+    databaseURL: "https://pp-2018-8b015.firebaseio.com/",
     projectId: "pp-2018-8b015",
     storageBucket: "pp-2018-8b015.appspot.com",
     messagingSenderId: "691170251529"

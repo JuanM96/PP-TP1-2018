@@ -27,7 +27,8 @@ export class LoginPage {
     
     this.showLoading()
     this.auth.login(this.registerCredentials).subscribe(allowed => {
-      if (allowed) {        
+      console.log(allowed);
+      if (allowed.h) {        
         this.nav.setRoot(TabsPage);
       } else {
         this.showError("Acceso Denegado");
@@ -36,8 +37,18 @@ export class LoginPage {
       error => {
         this.showError(error);
       });
+      
+
   }
- 
+  public login2() {
+    this.aux = true
+    this.showLoading();
+    this.auth.signInWithEmail(this.registerCredentials)
+      .then(
+        () => this.nav.setRoot(TabsPage),
+        error => this.showError(error.message)//console.log(error.message)
+      );
+  }
   showLoading() {
     this.loading = this.loadingCtrl.create({
       content: 'Espere Porfavor...',

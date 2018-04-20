@@ -59,6 +59,9 @@ export class AuthService {
       });
     }
   }
+  signUp(credentials) {
+    return this.afAuth.auth.createUserWithEmailAndPassword(credentials.email, credentials.password);
+  }
  
   public getUserInfo() : Usuario {
     return this.currentUser;
