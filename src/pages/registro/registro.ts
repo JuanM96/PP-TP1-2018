@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController, IonicPage } from 'ionic-angular';
+import { NavController, AlertController } from 'ionic-angular';
 import { AuthService } from '../../providers/auth-service/auth-service';
 /**
  * Generated class for the RegistroPage page.
@@ -8,7 +8,6 @@ import { AuthService } from '../../providers/auth-service/auth-service';
  * on Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-registro',
   templateUrl: 'registro.html',
