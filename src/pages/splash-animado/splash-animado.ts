@@ -28,7 +28,7 @@ export class SplashAnimadoPage {
  
     setTimeout(() => {
       this.viewCtrl.dismiss();
-    }, 5000);
+    }, 1); // 5000
  
   }
 
