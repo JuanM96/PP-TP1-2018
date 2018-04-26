@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
 import { RegistroPage } from '../pages/registro/registro';
+import { SplashAnimadoPage } from '../pages/splash-animado/splash-animado';
 
 
 
@@ -36,7 +37,8 @@ export const firebaseConfig = {
     HomePage,
     LoginPage,
     TabsPage,
-    RegistroPage
+    RegistroPage,
+    SplashAnimadoPage
   ],
   imports: [
     BrowserModule,
@@ -52,6 +54,7 @@ export const firebaseConfig = {
     HomePage,
     LoginPage,
     RegistroPage,
+    SplashAnimadoPage,
     TabsPage
   ],
   providers: [

@@ -1,0 +1,52 @@
+page-splash-animado {
+    .loader {
+        animation: spin 3s linear infinite;
+       }
+     
+       @keyframes spin {
+           0% { transform: rotate(0deg); }
+           100% { transform: rotate(360deg); }
+       }
+    /*.fondo{
+        align-items: center;
+        background: url('../../assets/SplahAnimado-Fondo.png') no-repeat;
+        //background-image: url("../../assets/SplahAnimado-Fondo.png");
+        //background-image: url("https://cdn.littmanbrands.com/hudsonvalleylighting/media/green%20paper.jpg");
+    }*/
+    .parent {
+        background-color: #EAD1B1;
+        position: relative;
+        top: 0;
+        left: 0;
+      }
+      .image1 {
+        position: relative;
+        top: 0;
+        left: 0;
+      }
+      .image2 {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+    .progress-outer {
+        width: 96%;
+        margin: 10px 2%;
+        padding: 3px;
+        text-align: center;
+        background-color: #f4f4f4;
+        border: 1px solid #dcdcdc;
+        color: #fff;
+        border-radius: 20px;
+    }
+ 
+    .progress-inner {
+        min-width: 15%;
+        white-space: nowrap;
+        overflow: hidden;
+        padding: 5px;
+        border-radius: 20px;
+        //background-color: map-get($colors, primary);
+        background-color: #51CFB1;
+    }
+}
