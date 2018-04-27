@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { LoginPage } from '../login/login';
 
 /**
  * Generated class for the SplashAnimadoPage page.
@@ -15,7 +17,7 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
 export class SplashAnimadoPage {
   progress:number;
 
-  constructor(public navCtrl: NavController,public viewCtrl: ViewController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,public viewCtrl: ViewController, public navParams: NavParams, public splashScreen: SplashScreen) {
     this.progress = 0;  
     let interval = window.setInterval(() => {
       this.progress = this.progress+1;
@@ -25,10 +27,12 @@ export class SplashAnimadoPage {
     }, 50);
   }
   ionViewDidEnter() {
+    this.splashScreen.hide();
  
     setTimeout(() => {
-      this.viewCtrl.dismiss();
-    }, 5000); // 5000
+      //this.viewCtrl.dismiss();
+      this.navCtrl.setRoot(LoginPage)
+    }, 6500); // 5000
  
   }
 
