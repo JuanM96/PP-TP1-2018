@@ -6,7 +6,7 @@
 <ion-header>
   <ion-navbar color="dark">
     <ion-title>
-      Member Area
+      Bienvenido!
     </ion-title>
     <ion-buttons end>
       <button ion-button (click)="logout()">
@@ -16,7 +16,15 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-
+<ion-content padding class="home">
+  <div class="center">
+    <ion-row>
+      <h2>Credito: {{credito}}</h2>
+    </ion-row>
+    
+  </div>
+  <div class="center button">
+    <button ion-button class="submit-btn" (click)="cargarCredito()">Cargar Credito</button>  
+  </div>
+  
 </ion-content>

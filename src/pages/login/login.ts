@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, AlertController, LoadingController, Loading } from 'ionic-angular';
 import { AuthService } from '../../providers/auth-service/auth-service';
 import { TabsPage } from '../tabs/tabs';
+import { HomePage } from '../home/home';
 import { RegistroPage } from '../registro/registro';
 
 
@@ -44,14 +45,14 @@ export class LoginPage {
     this.showLoading();
     this.auth.signInWithEmail(this.registerCredentials)
       .then(
-        () => this.nav.setRoot(TabsPage),
+        () => this.nav.setRoot(HomePage),
         error => this.showError(error.message)//console.log(error.message)
       );
   }
   loginWithGoogle() {
     this.auth.signInWithGoogle()
       .then(
-        () => this.nav.setRoot(TabsPage),
+        () => this.nav.setRoot(HomePage),
         error => console.log(error.message)
       );
   }
@@ -74,5 +75,10 @@ export class LoginPage {
          });
          alert.present();
     }
+  }
+  public ingresoTest(){
+    this.registerCredentials.email = "admin@admin.com";
+    this.registerCredentials.password = "admin123";
+    this.login2();
   }
 }
