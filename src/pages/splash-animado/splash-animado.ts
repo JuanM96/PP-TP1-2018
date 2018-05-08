@@ -32,7 +32,7 @@ export class SplashAnimadoPage {
     setTimeout(() => {
       //this.viewCtrl.dismiss();
       this.navCtrl.setRoot(LoginPage)
-    }, 6500); // 6500
+    }, 1); // 6500
  
   }
 
